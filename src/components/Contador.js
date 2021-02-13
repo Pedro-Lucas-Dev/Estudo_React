@@ -1,26 +1,51 @@
 import React from 'react'
 
+const OPERATIOR_AVAILABLE = {
+    ADD: 'ADD',
+    SUB: "SUB",
+    RESET: 'RESET'
+}
 export default class Contador extends React.Component {
     constructor() {
         super()
         this.state = {
-            sexo: ""
+            contador: 0
         }
     }
     
-     setSexo(sexoSelecionado) {
-         this.setState({
-             sexo: sexoSelecionado 
-         })
+     doAction(operator) {
+         const {contador} = this.state
+         if (operator === OPERATIOR_AVAILABLE.ADD && contador < 9) {
+            this.setState({
+                contador: contador + 1
+            })
+         }
+
+         if (operator === OPERATIOR_AVAILABLE.SUB && contador > 0) {
+            this.setState({
+                contador: contador - 1 
+            })
+         }
+
+         if (operator === OPERATIOR_AVAILABLE.RESET){
+            this.setState({
+                contador: 0 
+            })
+         }
+         
      }
 
     render() {
+        const {contador} = this.state
         return(
            
            <div>
-               <h1>Seu sexo é {this.state.sexo}</h1>
-            <button onClick={() => this.setSexo("Masculino")}>Masculino</button> 
-            <button onClick={() => this.setSexo("Femenino")}>Femenino</button>
+               <h1>Contador:  {contador}</h1>
+            <button onClick={() => this.doAction(OPERATIOR_AVAILABLE.ADD)}>Adicionar</button> 
+            <button onClick={() => this.doAction(OPERATIOR_AVAILABLE.SUB)}>Subtrair</button>
+            <br />
+            <button onClick={() => this.doAction(OPERATIOR_AVAILABLE.RESET)}>Reset</button>
+
            </div>
         )
     }

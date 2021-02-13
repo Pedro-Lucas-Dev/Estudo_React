@@ -3,44 +3,24 @@ import React from 'react'
 export default class Contador extends React.Component {
     constructor() {
         super()
-         this.state = {
-             contador: 0
-         }
+        this.state = {
+            sexo: ""
+        }
     }
-
-     aumentar() {
-         const {contador} = this.state
-         if (contador === 10) {
-             return
-         }
+    
+     setSexo(sexoSelecionado) {
          this.setState({
-             contador: contador + 1 
+             sexo: sexoSelecionado 
          })
      }
-     diminuir() {
-         const {contador} = this.state
-         if (contador === 0) {
-            return
-         }
-        this.setState({
-            contador: contador - 1
-        })
-     }
-      reseta(){
-          this.setState({
-              contador: 0
-          })
-      }
 
     render() {
-        const {contador} = this.state
         return(
            
            <div>
-              <h1>{contador}</h1>
-             <button onClick={this.aumentar.bind(this)}>+</button>
-             <button onClick={this.diminuir.bind(this)}>-</button>
-             <br/> <button onClick={this.reseta.bind(this)}>Resetar</button>
+               <h1>Seu sexo é {this.state.sexo}</h1>
+            <button onClick={() => this.setSexo("Masculino")}>Masculino</button> 
+            <button onClick={() => this.setSexo("Femenino")}>Femenino</button>
            </div>
         )
     }

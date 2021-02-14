@@ -15,7 +15,7 @@ export default class Contador extends React.Component {
     
      doAction(operator) {
          const {contador} = this.state
-         if (operator === OPERATIOR_AVAILABLE.ADD && contador < 9) {
+         if (operator === OPERATIOR_AVAILABLE.ADD && contador < 10) {
             this.setState({
                 contador: contador + 1
             })

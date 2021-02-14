@@ -1,16 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export default class Partida extends React.Component {
+export default class Partida extends Component {
     render() {
         return(
-            <div>
-                <h2>Estádio</h2>
-                <div>
-                    <span>Data</span>
-                    <span> - </span>
-                    <span>Hora</span>
-                </div>
-            </div>
+           <div>
+               <h1>Estádio</h1>
+               <span>Data</span>
+               <span> - </span>
+               <span>Hora</span>
+           </div>
         )
+
     }
 }

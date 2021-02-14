@@ -1,13 +1,13 @@
-import React from 'react'
-import BotaoGol from './BotaoGol.js'
+import React, {Component} from 'react'
 
-export default class Time extends React.Component {
-    render(){
+import Botao from './Botao'
+
+export default class Time extends Component { 
+    render() {
         return(
             <div>
-                <h1>vasco</h1>
-                <h2>0</h2>
-               <BotaoGol />
+                <h1>Vasco</h1>
+                <Botao />
             </div>
         )
     }

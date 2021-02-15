@@ -2,29 +2,32 @@ import React from 'react'
 
 import Placar from './Placar'
 
-const dados = {
+import Hello from './Hello'
 
-    partida: {
-        estadio: "Maracanâ/RJ",
-        data: "14/02/2021",
-        horario: "20h"     
-    },
 
-    casa: {
-        nome: "Vasco",
-    },
-
-    visitante: {
-        nome: "Flamengo"
-    }
-
-}
 
 export default class App extends React.Component{
+
+    sayMyName(nome) {
+      alert(
+          nome
+      )
+    }
+
     render() {
-        return <Placar partida= { dados.partida }
-                       casa= { dados.casa } 
-                       visitante= { dados.visitante }
+        return (
+            <div>
+
+                <Hello 
+                    nome = { "pedro" } 
+                    onClickBtn = { (nome) => this.sayMyName(nome) }
                 />
+                <Hello 
+                     nome = { "charle" } 
+                     onClickBtn = { (nome) => this.sayMyName(nome) }
+                />
+
+            </div>
+        )
     }
  }

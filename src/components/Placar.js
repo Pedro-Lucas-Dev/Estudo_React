@@ -16,7 +16,7 @@ export default class Placar extends React.Component {
     marcarGolCasa() {
         const {gols_casa} = this.state
         this.setState({
-            gols_casa: this.state.gols_casa + 1
+            gols_casa: gols_casa + 1
         })
     }
 

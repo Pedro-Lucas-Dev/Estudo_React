@@ -1,31 +1,30 @@
 import React from 'react'
 
-import Placar from './Placar'
+import Epic from './Epic'
 
-import Hello from './Hello'
 
 
 
 export default class App extends React.Component{
-
-    sayMyName(nome) {
-      alert(
-          nome
-      )
-    }
-
     render() {
         return (
             <div>
 
-                <Hello 
-                    nome = { "pedro" } 
-                    onClickBtn = { (nome) => this.sayMyName(nome) }
+                <Epic 
+                    message = {"Exclusive interactive, online community"}
+                    icon = {"book"} 
                 />
-                <Hello 
-                     nome = { "charle" } 
-                     onClickBtn = { (nome) => this.sayMyName(nome) }
+
+                <Epic 
+                    message = {"Technical talks from network members and global technology leaders"} 
+                    icon = {"bath"} 
                 />
+
+                <Epic 
+                    message = {"Opportunities to build your personal brand"} 
+                    icon = {"car"} 
+                />
+                
 
             </div>
         )

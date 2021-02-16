@@ -1,27 +1,19 @@
 import React from 'react'
+import Body from './Body'
+import Header from './Header'
+import Footer from './Footer'
 
-import Placar from './Placar'
-
-const dados = {
-
-    partida: {
-        estadio: "Maracanâ/RJ",
-        data: "14/02/2021",
-        horario: "20h"     
-    },
-
-    casa: {
-        nome: "Vasco",
-    },
-
-    visitante: {
-        nome: "Flamengo"
-    }
-
-}
 
 export default class App extends React.Component{
     render() {
-        return <Placar {...dados} />
+        return(
+            <div>
+                <Header /> 
+                <hr />
+                <Body />
+                <hr />
+                <Footer />
+            </div>
+        )
     }
  }
